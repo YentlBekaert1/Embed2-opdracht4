@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 # set the project name
-project(Opdracht2)
+project(Opdracht4)
 
 #target_link_libraries(client /home/pi/embed2/tlpi-dist/libtlpi.a)
 #target_include_directories(server PRIVATE /home/pi/embed2/tlpi-dist/dist)

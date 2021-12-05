@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/server.dir/http_server.c.o  -o server  libPJ_RPI.a 
