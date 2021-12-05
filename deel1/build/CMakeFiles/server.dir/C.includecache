@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/embed2/Opdracht4/deel1/PJ_RPI.h
+/home/pi/embed2/Embed2-opdracht4/deel1/PJ_RPI.h
 stdio.h
 -
 string.h
@@ -30,7 +30,7 @@ sys/stat.h
 unistd.h
 -
 
-/home/pi/embed2/Opdracht4/deel1/ud_ucase.h
+/home/pi/embed2/Embed2-opdracht4/deel1/ud_ucase.h
 sys/un.h
 -
 sys/socket.h
@@ -38,11 +38,11 @@ sys/socket.h
 ctype.h
 -
 tlpi_hdr.h
-/home/pi/embed2/Opdracht4/deel1/tlpi_hdr.h
+/home/pi/embed2/Embed2-opdracht4/deel1/tlpi_hdr.h
 
-/home/pi/embed2/Opdracht4/deel1/ud_ucase_sv.c
+/home/pi/embed2/Embed2-opdracht4/deel1/ud_ucase_sv.c
 PJ_RPI.h
-/home/pi/embed2/Opdracht4/deel1/PJ_RPI.h
+/home/pi/embed2/Embed2-opdracht4/deel1/PJ_RPI.h
 stdio.h
 -
 signal.h
@@ -52,9 +52,9 @@ sys/time.h
 time.h
 -
 tlpi_hdr.h
-/home/pi/embed2/Opdracht4/deel1/tlpi_hdr.h
+/home/pi/embed2/Embed2-opdracht4/deel1/tlpi_hdr.h
 pthread.h
 -
 ud_ucase.h
-/home/pi/embed2/Opdracht4/deel1/ud_ucase.h
+/home/pi/embed2/Embed2-opdracht4/deel1/ud_ucase.h
 

@@ -26,20 +26,23 @@ struct sigaction sa;
 static void 
 sigalrmHandler(int sig)
 {
+    t_data send_data;
 	if (received_data_int == 1)
     {
           
         if(state == 0){
             GPIO_SET = (1 << IO) ^ GPIO_SET;
             state = 1;
-            received_data.period = state;
-            if (sendto(sfd, &received_data, sizeof(received_data), 0, (struct sockaddr *) &claddr, len) != numBytes)
+            send_data.IO = IO;
+            send_data.period = state;
+            if (sendto(sfd, &send_data, sizeof(send_data), 0, (struct sockaddr *) &claddr, len) != sizeof(send_data))
                 fatal("sendto"); 
         }else{
             GPIO_CLR = 1 << IO;
             state = 0;
-            received_data.period = state;
-            if (sendto(sfd, &received_data, sizeof(received_data), 0, (struct sockaddr *) &claddr, len) != numBytes)
+            send_data.IO = IO;
+            send_data.period = state;
+            if (sendto(sfd, &send_data, sizeof(send_data), 0, (struct sockaddr *) &claddr, len) != sizeof(send_data))
                 fatal("sendto");
         }
     }
@@ -51,7 +54,7 @@ static void *
 threadFunc(void *arg)
 {
      
-     len = sizeof(struct sockaddr_un);
+    len = sizeof(struct sockaddr_un);
     numBytes = recvfrom(sfd, &received_data, sizeof(received_data), 0, (struct sockaddr *) &claddr, &len);
 
     if (numBytes == -1)
@@ -70,10 +73,7 @@ threadFunc(void *arg)
     itv.it_interval.tv_sec = received_data.period;
     itv.it_interval.tv_usec = 0;
 
-    if (setitimer(ITIMER_REAL, &itv, NULL) == -1)
-            errExit("setitimer");
-
-    return "test";
+    return "";
 }
 
 
@@ -117,19 +117,26 @@ int main()
     void *res;
     int s;
 
+    s = pthread_create(&t1, NULL, threadFunc, "Hello world\n");
+    if (s != 0)
+        errExitEN(s, "pthread_create");
+
+    printf("Thread aangemaakt\n");
+
+    s = pthread_join(t1, &res);
    
-	while(1){
-        s = pthread_create(&t1, NULL, threadFunc, "Hello world\n");
-        if (s != 0)
-            errExitEN(s, "pthread_create");
+    if (s != 0)
+        errExitEN(s, "pthread_join");
 
-        printf("Message from main()\n");
-        s = pthread_join(t1, &res);
-        if (s != 0)
-            errExitEN(s, "pthread_join");
+    printf("Thread returned %ld \n", (long) res);
 
-        printf("Thread returned %ld\n", (long) res);
+    if (setitimer(ITIMER_REAL, &itv, NULL) == -1)
+        errExit("setitimer");
+
+    while (1){
+
     }
+    
 	return 0;	
 
 }

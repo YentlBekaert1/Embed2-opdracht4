@@ -64,11 +64,16 @@ main(int argc, char *argv[])
             sizeof(struct sockaddr_un)) != sizeof(data))
         fatal("sendto");
 
+    t_data response;
+
      while(1)  {
-        t_data response = {io,period};
-        len = sizeof(struct sockaddr);
+        len = sizeof(struct sockaddr_un);
         numBytes = recvfrom(sfd, &response, sizeof(response), 0, (struct sockaddr *) &svaddr, &len);
-        printf("IO: %d, state = %d ", response.IO, response.period);
+        if (numBytes == -1)
+            errExit("recvfrom");
+
+        printf("IO: %d, state = %d \n", response.IO, response.period);
+        
     }
     remove(claddr.sun_path);            /* Remove client socket pathname */
     exit(EXIT_SUCCESS);

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/pi/embed2/Opdracht4/deel1/ud_ucase_sv.c" "/home/pi/embed2/Opdracht4/deel1/build/CMakeFiles/server.dir/ud_ucase_sv.c.o"
+  "/home/pi/embed2/Embed2-opdracht4/deel1/ud_ucase_sv.c" "/home/pi/embed2/Embed2-opdracht4/deel1/build/CMakeFiles/server.dir/ud_ucase_sv.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -14,7 +14,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/pi/embed2/Opdracht4/deel1/build/CMakeFiles/PJ_RPI.dir/DependInfo.cmake"
+  "/home/pi/embed2/Embed2-opdracht4/deel1/build/CMakeFiles/PJ_RPI.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

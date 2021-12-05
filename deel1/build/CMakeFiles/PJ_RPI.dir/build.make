@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/embed2/Opdracht4/deel1
+CMAKE_SOURCE_DIR = /home/pi/embed2/Embed2-opdracht4/deel1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/embed2/Opdracht4/deel1/build
+CMAKE_BINARY_DIR = /home/pi/embed2/Embed2-opdracht4/deel1/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/PJ_RPI.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/PJ_RPI.dir/flags.make
 
 CMakeFiles/PJ_RPI.dir/PJ_RPI.c.o: CMakeFiles/PJ_RPI.dir/flags.make
 CMakeFiles/PJ_RPI.dir/PJ_RPI.c.o: ../PJ_RPI.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/embed2/Opdracht4/deel1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/PJ_RPI.dir/PJ_RPI.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/PJ_RPI.dir/PJ_RPI.c.o   -c /home/pi/embed2/Opdracht4/deel1/PJ_RPI.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/embed2/Embed2-opdracht4/deel1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/PJ_RPI.dir/PJ_RPI.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/PJ_RPI.dir/PJ_RPI.c.o   -c /home/pi/embed2/Embed2-opdracht4/deel1/PJ_RPI.c
 
 CMakeFiles/PJ_RPI.dir/PJ_RPI.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/PJ_RPI.dir/PJ_RPI.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/embed2/Opdracht4/deel1/PJ_RPI.c > CMakeFiles/PJ_RPI.dir/PJ_RPI.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/pi/embed2/Embed2-opdracht4/deel1/PJ_RPI.c > CMakeFiles/PJ_RPI.dir/PJ_RPI.c.i
 
 CMakeFiles/PJ_RPI.dir/PJ_RPI.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/PJ_RPI.dir/PJ_RPI.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/embed2/Opdracht4/deel1/PJ_RPI.c -o CMakeFiles/PJ_RPI.dir/PJ_RPI.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/pi/embed2/Embed2-opdracht4/deel1/PJ_RPI.c -o CMakeFiles/PJ_RPI.dir/PJ_RPI.c.s
 
 # Object files for target PJ_RPI
 PJ_RPI_OBJECTS = \
@@ -80,7 +80,7 @@ PJ_RPI_EXTERNAL_OBJECTS =
 libPJ_RPI.a: CMakeFiles/PJ_RPI.dir/PJ_RPI.c.o
 libPJ_RPI.a: CMakeFiles/PJ_RPI.dir/build.make
 libPJ_RPI.a: CMakeFiles/PJ_RPI.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/embed2/Opdracht4/deel1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libPJ_RPI.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/embed2/Embed2-opdracht4/deel1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libPJ_RPI.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/PJ_RPI.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PJ_RPI.dir/link.txt --verbose=$(VERBOSE)
 
@@ -94,6 +94,6 @@ CMakeFiles/PJ_RPI.dir/clean:
 .PHONY : CMakeFiles/PJ_RPI.dir/clean
 
 CMakeFiles/PJ_RPI.dir/depend:
-	cd /home/pi/embed2/Opdracht4/deel1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/embed2/Opdracht4/deel1 /home/pi/embed2/Opdracht4/deel1 /home/pi/embed2/Opdracht4/deel1/build /home/pi/embed2/Opdracht4/deel1/build /home/pi/embed2/Opdracht4/deel1/build/CMakeFiles/PJ_RPI.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pi/embed2/Embed2-opdracht4/deel1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/embed2/Embed2-opdracht4/deel1 /home/pi/embed2/Embed2-opdracht4/deel1 /home/pi/embed2/Embed2-opdracht4/deel1/build /home/pi/embed2/Embed2-opdracht4/deel1/build /home/pi/embed2/Embed2-opdracht4/deel1/build/CMakeFiles/PJ_RPI.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/PJ_RPI.dir/depend
 

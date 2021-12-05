@@ -8,10 +8,6 @@ project(Opdracht4)
 #link libtlpi.a library
 link_libraries(libtlpi.a)
 
-
-
-
-
 #link PJI_RPI library
 add_library(PJ_RPI PJ_RPI.c)
 install (TARGETS PJ_RPI DESTINATION lib)
@@ -22,7 +18,7 @@ link_libraries(PJ_RPI)
 add_executable(client ud_ucase_cl.c)
 add_executable(server ud_ucase_sv.c)
 
-
+#voor de threads
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
 target_link_libraries(server PRIVATE Threads::Threads)

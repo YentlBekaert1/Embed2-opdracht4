@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/pi/embed2/Opdracht4/deel1/PJ_RPI.c" "/home/pi/embed2/Opdracht4/deel1/build/CMakeFiles/PJ_RPI.dir/PJ_RPI.c.o"
+  "/home/pi/embed2/Embed2-opdracht4/deel1/PJ_RPI.c" "/home/pi/embed2/Embed2-opdracht4/deel1/build/CMakeFiles/PJ_RPI.dir/PJ_RPI.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
