@@ -149,6 +149,9 @@ int main(void)
          if (pid == 0)  {
              SendDataToClient (clientSocket);
              close(clientSocket);
+
+             exit(0);
+            
          }
          else{
             send(clientSocket, httpHeader, sizeof(httpHeader), 0);
