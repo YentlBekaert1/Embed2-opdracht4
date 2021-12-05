@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/client.dir/ud_ucase_cl.c.o  -o client  -Wl,-Bstatic -ltlpi libPJ_RPI.a -ltlpi -Wl,-Bdynamic 

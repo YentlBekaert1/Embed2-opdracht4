@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/server.dir/ud_ucase_sv.c.o  -o server  -Wl,-Bstatic -ltlpi libPJ_RPI.a -ltlpi -Wl,-Bdynamic -pthread 
