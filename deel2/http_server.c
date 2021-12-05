@@ -12,6 +12,8 @@
 
 #include <arpa/inet.h>
 
+#include "PJ_RPI.h"
+
 #define SIZE 1024
 #define BACKLOG 10  // Passed to listen()
 
@@ -33,6 +35,24 @@ void setHttpHeader(char httpHeader[])
 
 int main(void)
 {
+    if(map_peripheral(&gpio) == -1) 
+	{
+       	 	printf("Failed to map the physical GPIO registers into the virtual memory space.\n");
+        	return -1;
+    }
+
+    // Define gpio 27,22,26 as input
+	INP_GPIO(27);
+	INP_GPIO(22);
+	INP_GPIO(26);
+
+    OUT_GPIO(17);
+	OUT_GPIO(13);
+	OUT_GPIO(19);
+
+    int outputs[3];
+    int inputs[3];
+
     char httpHeader[8000] = "HTTP/1.1 200 OK\r\n\n";
 
     // Socket setup: creates an endpoint for communication, returns a descriptor
@@ -74,8 +94,43 @@ int main(void)
     // Wait for a connection, create a connected socket if a connection is pending
     // -----------------------------------------------------------------------------------------------------------------
     while(1) {
+         outputs[0] = 1;
+         outputs[1] = 0;
+         outputs[2] = 1;
+
+         inputs[0] = GPIO_READ(27);
+         inputs[1] = GPIO_READ(22);
+         inputs[2] = GPIO_READ(26);
+
+        char test[20];
+
         clientSocket = accept(serverSocket, NULL, NULL);
         send(clientSocket, httpHeader, sizeof(httpHeader), 0);
+
+        for(int i = 0; i < 6 ; i++ ){
+            if(i == 0){
+                sprintf(test, "<p>Input GPIO 27: %d </p>", inputs[0]);
+            }
+            if(i == 1){
+                sprintf(test, "<p>Input GPIO 22: %d </p>", inputs[1]);
+            }
+            if(i == 2){
+                sprintf(test, "<p>Input GPIO 26: %d </p>", inputs[2]);
+            }
+            if(i == 3){
+                sprintf(test, "<p>Output GPIO 17: %d </p>", outputs[0]);
+            }
+            if(i == 4){
+                sprintf(test, "<p>Output GPIO 13: %d </p>", outputs[1]);
+            }
+            if(i == 5){
+                sprintf(test, "<p>Output GPIO 19: %d </p>", outputs[2]);
+            }
+            
+            send(clientSocket, test, sizeof(test), 0);
+        }
+        send(clientSocket, "</body>", sizeof("</body>"), 0);
+        send(clientSocket, "</html>", sizeof("</html>"), 0);
         close(clientSocket);
     }
     return 0;

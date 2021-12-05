@@ -6,6 +6,30 @@
 
 #IncludeRegexTransform: 
 
+/home/pi/embed2/Embed2-opdracht4/deel2/PJ_RPI.h
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+dirent.h
+-
+fcntl.h
+-
+assert.h
+-
+sched.h
+-
+sys/mman.h
+-
+sys/types.h
+-
+sys/stat.h
+-
+unistd.h
+-
+
 /home/pi/embed2/Embed2-opdracht4/deel2/http_server.c
 stdio.h
 -
@@ -27,4 +51,6 @@ netinet/in.h
 -
 arpa/inet.h
 -
+PJ_RPI.h
+/home/pi/embed2/Embed2-opdracht4/deel2/PJ_RPI.h
 
