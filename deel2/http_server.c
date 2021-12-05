@@ -73,6 +73,12 @@ void SendDataToClient (int clientSocket){
         send(clientSocket, "</html>", sizeof("</html>"), 0);
 
 }
+void error(const char *msg)
+{
+    perror(msg);
+    exit(1);
+}
+
 
 int main(void)
 {
@@ -92,6 +98,8 @@ int main(void)
 	OUT_GPIO(19);
 
     char httpHeader[8000] = "HTTP/1.1 200 OK\r\n\n";
+
+    int pid;
 
     // Socket setup: creates an endpoint for communication, returns a descriptor
     // -----------------------------------------------------------------------------------------------------------------
@@ -133,11 +141,23 @@ int main(void)
     // -----------------------------------------------------------------------------------------------------------------
     while(1) {
         clientSocket = accept(serverSocket, NULL, NULL);
-        send(clientSocket, httpHeader, sizeof(httpHeader), 0);
-        SendDataToClient (clientSocket);
-        close(clientSocket);
+        if (clientSocket < 0) 
+             error("ERROR on accept");
+         pid = fork();
+         if (pid < 0)
+             error("ERROR on fork");
+         if (pid == 0)  {
+             SendDataToClient (clientSocket);
+             close(clientSocket);
+         }
+         else{
+            send(clientSocket, httpHeader, sizeof(httpHeader), 0);
+            close(clientSocket);
+         }
+         
     }
-    return 0;
+    close(clientSocket);
+    return 0; /* we never get here */
 }
 
 void report(struct sockaddr_in *serverAddress)
